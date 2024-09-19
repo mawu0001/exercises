@@ -85,8 +85,7 @@ function determinWinner() {
   if (userGuess === computerGuess) {
     result = "draw";
     draw.classList.remove("hidden");
-  }
-  if (
+  } else if (
     (userGuess === "rock" && computerGuess === "paper") ||
     (userGuess === "paper" && computerGuess === "scissors") ||
     (userGuess === "scissors" && computerGuess === "rock")
