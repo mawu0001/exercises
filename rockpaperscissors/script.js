@@ -2,6 +2,7 @@
 let userGuess;
 let computerGuess;
 let result;
+let randomNum;
 
 const rock = document.querySelector(".rock");
 const paper = document.querySelector(".paper");
@@ -33,15 +34,48 @@ function scissorsClicked() {
 }
 
 function computerGuesses() {
-  computerGuess = "scissors";
-  console.log("Computer guesses");
-  console.log("user guesses", userGuess);
+  randomNum = Math.floor(Math.random() * 3) + 1;
+  // computerGuess = "scissors";
+  if (randomNum === 1) {
+    computerGuess = "rock";
+  }
+  if (randomNum === 2) {
+    computerGuess = "scissors";
+  }
+  if (randomNum === 3) {
+    computerGuess = "paper";
+  }
+
+  console.log("computer Guess:", randomNum);
+  console.log("user guess:", userGuess);
 
   player1.classList.add("shake");
   player2.classList.add("shake");
 
-  player1.addEventListener("animationend", determinWinner);
+  player1.addEventListener("animationend", playerHand1);
+  player1.addEventListener("animationend", playerHand2);
   endGame();
+}
+
+function playerHand1() {
+  if (userGuess === "paper") {
+    player1.classList.add("paper");
+  }
+  if (userGuess === "scissors") {
+    player1.classList.add("scissors");
+  } else {
+  }
+  determinWinner();
+}
+function playerHand2() {
+  if (computerGuess === "paper") {
+    player2.classList.add("paper");
+  }
+  if (computerGuess === "scissors") {
+    player2.classList.add("scissors");
+  } else {
+  }
+  determinWinner();
 }
 
 function determinWinner() {
@@ -76,4 +110,7 @@ function endGame() {
   win.classList.add("hidden");
   lose.classList.add("hidden");
   draw.classList.add("hidden");
+
+  player1.classList.remove("paper", "scissors", "rock");
+  player2.classList.remove("paper", "scissors", "rock");
 }
