@@ -92,12 +92,7 @@ function determinWinner() {
   ) {
     result = "lose";
     lose.classList.remove("hidden");
-  }
-  if (
-    (userGuess === "rock" && computerGuess === "scissors") ||
-    (userGuess === "paper" && computerGuess === "rock") ||
-    (userGuess === "scissors" && computerGuess === "paper")
-  ) {
+  } else {
     result = "win";
     win.classList.remove("hidden");
   }
