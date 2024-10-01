@@ -107,6 +107,8 @@ function showTheseVehicles(arr) {
   });
 }
 
+//${each.stops ? `<td>${each.stops}</td>` : <td>""</td>}
+
 // fjerner udefineret indhold, tilføjer "x" ved true, ellers skal indhold bare være der
 function erDuflot(word) {
   if (word === true) {
