@@ -13,7 +13,6 @@ $("button").addEventListener("click", () => {
 // createList(bc);
 
 function createList(arr) {
-  //tøm tabel
   $("nav").innerHTML = "";
 
   arr.forEach((each) => {
