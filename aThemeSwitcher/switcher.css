@@ -23,11 +23,11 @@
   --body-bg: #5a5a5a;
 }
 [data-theme="fall"] {
-  --header-bg-col: #b95600;
+  --header-bg-col: #774921;
   --header-txt-col: #181818;
-  --main-bg-col: #ff952b;
+  --main-bg-col: #b95600;
   --main-txt-col: #181818;
-  --footer-bg-col: #b95600;
+  --footer-bg-col: #774921;
   --footer-txt-col: #181818;
   --body-bg: #474747;
 }
