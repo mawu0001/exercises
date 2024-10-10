@@ -15,8 +15,8 @@ const Animal = {
 function start() {
   console.log("ready");
 
-  registerButton();
   loadJSON();
+  registerButton();
 }
 
 function registerButton() {
@@ -56,6 +56,7 @@ function preapareObject(jsonObject) {
 
   return animal;
 }
+
 function filterList(animalType) {
   let filteredList = allAnimals;
   if (animalType === "dog") {
@@ -65,6 +66,7 @@ function filterList(animalType) {
   }
   displayList(filteredList);
 }
+
 function isDog(animal) {
   return animal.type === "dog";
 }

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  const container = document.querySelector("body");
+  const width = window.innerWidth;
+  const heigth = window.innerHeight;
+
+  // vi lytter på musens bevægelse i forhold til dens container.
+  document.addEventListener("mousemove", setColor);
+
+  function setColor(elm) {
+    // definere X & Y ved at finde dets postion ifth. højde/bredde
+    const x = elm.clientX;
+    const y = elm.clientY;
+
+    // udregner procent for ligth /saturation til at definere farven
+    const l = Math.round((x / width) * 100);
+    const s = Math.round((y / heigth) * 100);
+
+    // får værdierne fra variablerne, og bliver sat ind i farvekode
+    let color = `hsl(296 ${s}% ${l}%)`;
+
+    // indsætter property på background color til farvekoden defineret i "color"
+    container.style.setProperty("background-color", color);
+  }
+</script>

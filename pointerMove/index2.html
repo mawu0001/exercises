@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<style>
+  html {
+    --lightness: 50%;
+    --saturation: 100%;
+  }
+
+  body {
+    background-color: hsl(296 var(--saturation) var(--lightness));
+  }
+</style>
+
+<script>
+  const cssVars = document.querySelector("html");
+  const width = window.innerWidth;
+  const heigth = window.innerHeight;
+
+  // vi lytter på musens bevægelse i forhold til dens container.
+  document.addEventListener("mousemove", setColor);
+
+  function setColor(elm) {
+    // definere X & Y ved at finde dets postion ifth. højde/bredde
+    const x = elm.clientX;
+    const y = elm.clientY;
+
+    // udregner procent for ligth /saturation til at definere farven
+    const l = Math.round((x / width) * 100);
+    const s = Math.round((y / heigth) * 100);
+
+    getComputedStyle(cssVars).getPropertyValue(
+      "--saturation",
+      "    --lightness"
+    );
+    cssVars.style.setProperty("--lightness", l);
+    cssVars.style.setProperty("--saturation", s);
+  }
+</script>
