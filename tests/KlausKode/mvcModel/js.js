@@ -3,9 +3,16 @@
 const h2names = document.querySelector("#names");
 const inputName = document.querySelector("#name");
 const button = document.querySelector("button");
+const nameArrayFromLocalStorage = localStorage.getItem("nameArray");
 
 //Model
-const model = ["Peter", "Paul", "Mary"];
+let model;
+if (nameArrayFromLocalStorage === null){
+  model = ["Peter", "Paul", "Mary"]
+} else {
+  model = JSON.parse(nameArrayFromLocalStorage)
+}
+
 // controller
 init();
 
@@ -16,9 +23,16 @@ function init() {
 
 function addNameToModel(name) {
   model.push(name);
+  upDateLocalStorage()
 }
 function removeNameFromModel(id) {
   model.splice(id, 1);
+  upDateLocalStorage()
+}
+
+function upDateLocalStorage(){
+  console.log("upDateLocalStorage", model)
+  localStorage.setItem("nameArray", JSON.stringify(model))
 }
 
 function upDateView() {
@@ -41,3 +55,4 @@ function klikspan(evt) {
   removeNameFromModel(evt.target.dataset.id);
   upDateView();
 }
+
