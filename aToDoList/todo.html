@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="todo.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>To Do</h1>
+    </header>
+    <main>
+      <ul id="list_active"></ul>
+      <label for="tasklist">+</label>
+      <input type="text" name="tasklist" id="tasklist" />
+      <input type="number" name="amount" id="amount" />
+      <button>submit</button>
+      <ul id="list_done"></ul>
+    </main>
+    <footer>Af Sif Melkane & Marie Wulff</footer>
+  </body>
+</html>
+
+<style>
+  body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+
+    > * {
+      padding: 2rem;
+    }
+  }
+
+  header {
+    background: rgb(240, 240, 240);
+  }
+
+  footer {
+    background: rgb(240, 240, 240);
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+  }
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.25rem;
+  }
+
+  li button {
+    background-color: lightgray;
+  }
+
+  #list_done li {
+    color: gray;
+  }
+
+  [type="number"] {
+    max-width: 4rem;
+  }
+</style>
